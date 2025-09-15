@@ -1,20 +1,12 @@
 package com.example.resturantprojects.Models;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name="resturant")
 public class Resturant {
     
     @Id
@@ -26,8 +18,8 @@ public class Resturant {
     private String description;
 
 
-    public Resturant(){
-
+    public Resturant(){ 
+        
     }
 
     public Resturant(Long id,String name , String address , String img , String description){
@@ -78,8 +70,6 @@ public class Resturant {
      public void setImg(String img) {
          this.img = img;
      }
-@OneToMany(mappedBy = "resturant", cascade = CascadeType.ALL, orphanRemoval = true)
-private List<Dish> dishes = new ArrayList<>();
 
 
    }

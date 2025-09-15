@@ -61,8 +61,6 @@ public class Dish {
          this.img = img;
      }
 
-     
-
      public Resturant getResturant() { 
         return resturant; 
     }
@@ -71,8 +69,8 @@ public class Dish {
         this.resturant = resturant;
      }
      
- @ManyToOne
-    @JoinColumn(name = "resturant_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "resturant_id", referencedColumnName="id")
     private Resturant resturant;
 
 }
